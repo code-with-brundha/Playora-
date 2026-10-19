@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --card-bg-light: rgba(255, 255, 255, 0.85);
+    --card-border-light: rgba(226, 232, 240, 0.8);
+    --card-bg-dark: rgba(18, 24, 38, 0.75);
+    --card-border-dark: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* 3D Perspective & Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+.translate-z-40 {
+  transform: translateZ(40px);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: var(--card-bg-light);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border-light);
+}
+
+.dark .glass-panel {
+  background: var(--card-bg-dark);
+  border: 1px solid var(--card-border-dark);
+}
+
+/* Glowing Neon Elements */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #00f5ff, #b026ff, #ff007f);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::before {
+  opacity: 0.7;
+}
+
+/* 3D Isometric Tile Effects for Tic-Tac-Toe cells */
+.tile-3d {
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: perspective(600px) rotateX(10deg);
+}
+
+.tile-3d:hover {
+  transform: perspective(600px) rotateX(0deg) translateY(-6px) scale(1.02);
+}
+
+.tile-3d:active {
+  transform: perspective(600px) rotateX(4deg) translateY(2px) scale(0.98);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Gradient Text */
+.text-gradient-cyan-purple {
+  background: linear-gradient(135deg, #00f5ff 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-amber-rose {
+  background: linear-gradient(135deg, #f59e0b 0%, #f43f5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Mahjong Tile Animations & 3D Depth */
+@keyframes tileShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px) rotate(-1deg); }
+  40%, 80% { transform: translateX(4px) rotate(1deg); }
+}
+
+.animate-tile-shake {
+  animation: tileShake 0.32s ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.4), inset 0 0 4px rgba(74, 222, 128, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.8), inset 0 0 8px rgba(74, 222, 128, 0.4);
+  }
+}
+
+.animate-match-glow {
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+

@@ -1,0 +1,25 @@
+{
+  "name": "playora-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playora - Modern 3D Multiplayer Gaming Platform",
+  "scripts": {
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build:client": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "build": "npm run build:client"
+  },
+  "keywords": [
+    "multiplayer",
+    "react",
+    "socket.io",
+    "tictactoe",
+    "tailwind",
+    "mongodb",
+    "gaming"
+  ],
+  "author": "Playora Team",
+  "license": "MIT"
+}

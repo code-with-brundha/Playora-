@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: playora-game-arena
+    env: node
+    plan: free
+    buildCommand: npm run install:all && npm run build:client
+    startCommand: npm start --prefix server
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CLIENT_URL
+        value: https://playora-game-arena.onrender.com
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
