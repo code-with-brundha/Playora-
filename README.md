@@ -57,7 +57,6 @@
 ---
 
 ### 🧰 Tech Stack
-```
 | Area | Technologies |
 |---|---|
 | Frontend | React, Vite, Tailwind CSS |
@@ -67,7 +66,6 @@
 | Authentication | JWT and bcrypt |
 | Version control | Git and GitHub |
 
-```
 ---
 
 ## 📁 Project Structure
